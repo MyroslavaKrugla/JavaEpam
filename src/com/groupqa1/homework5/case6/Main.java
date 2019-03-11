@@ -1,4 +1,4 @@
-package com.groupqa1.homework5.case1;
+package com.groupqa1.homework5.case6;
 
 import java.util.Arrays;
 
