@@ -1,14 +1,20 @@
-package com.groupqa1.homework6.case1;
+package com.groupqa1.homework6.case1.model;
+
+import com.groupqa1.lesson6.case2.ID;
 
 public class Book {
     private String name, author, company;
-    private  int ID, year, pages, price;
+    private  int ID, year, pages;
+    private double price;
+    private static  int nextID = 1;
+
 
     public Book() {
+        this.ID = nextID++;
     }
 
-    public Book(int ID, int year, int pages, int price, String name, String author, String company) {
-        this.ID = ID;
+    public Book(int year, int pages, double price, String name, String author, String company) {
+        this();
         this.year = year;
         this.pages = pages;
         this.price = price;
@@ -19,10 +25,6 @@ public class Book {
 
     public int getID() {
         return ID;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
     }
 
     public int getYear() {
@@ -41,11 +43,11 @@ public class Book {
         this.pages = pages;
     }
 
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
 
@@ -73,8 +75,12 @@ public class Book {
         this.company = company;
     }
 
-    public void view() {
-        System.out.println("Book ID: " + ID + "\nname: " + name + "\nauthor: " + author + "\nyear: " + year + "\npublisher: " +
-                        company + "\nquantity of pages: " + pages + "\nprice, UAH: " + price);
+    public void changePrice(double percent) {
+        this.price = price + price * percent / 100;
+    }
+
+    public String viewBook() {
+        return "Book ID: " + ID + "\nname: " + name + "\nauthor: " + author + "\nyear: " + year + "\npublisher: " +
+                        company + "\nquantity of pages: " + pages + "\nprice, UAH: " + price;
     }
 }

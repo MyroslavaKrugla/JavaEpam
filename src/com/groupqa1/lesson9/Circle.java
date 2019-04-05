@@ -1,7 +1,9 @@
-package com.groupqa1.homework7;
+package com.groupqa1.lesson9;
+
+import com.groupqa1.lesson9.Shape;
 
 public class Circle extends Shape {
-     double radius;
+    private double radius;
 
     Circle(double radius, String color) {
         super(color);
