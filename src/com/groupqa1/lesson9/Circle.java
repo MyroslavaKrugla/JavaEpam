@@ -1,3 +1,5 @@
+package com.groupqa1.lesson9;
+
 import com.groupqa1.lesson9.Shape;
 
 public class Circle extends Shape {
